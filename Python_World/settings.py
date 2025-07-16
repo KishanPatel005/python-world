@@ -18,33 +18,19 @@ import environ
 
 env = environ.Env()
 environ.Env.read_env()
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-# connection to the mongo
-MONGO_URI = (
-    "mongodb+srv://patelvishw596:Vkp8989@cluster0.slx1g.mongodb.net/python-community"
-)
-connect(host=MONGO_URI)
-
-
 ELASTICSEARCH_USERNAME = 'elastic'
 ELASTICSEARCH_PASSWORD = 'YourStrongPassword123'
 
-ELASTIC_SEARCH_HOST = {
-    "default": {
-        'HOST': 'http://34.100.190.94:9200',
-        "http_auth": (ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD),
-        "verify_certs": False,
+ELASTICSEARCH_DSL = {
+    'default': {
+        'hosts': f"http://{ELASTICSEARCH_USERNAME}:{ELASTICSEARCH_PASSWORD}@34.100.190.94:9200"
     }
 }
 
-ELASTICSEARCH_DSL = {
-    "default": {
-        'HOST': 'http://34.100.190.94:9200',
-        "http_auth": (ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD),
-        "verify_certs": False,
-    }
-}
+
+ 
+
+ 
 
 SECRET_KEY = "django-insecure-0pfz8hbbu^%f#vj^t=n_qi^x7ymd@j-(y2e9=y2v2n+_k)(x0s"
 
@@ -56,21 +42,11 @@ CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000", "http://localhost:8000","https:
 
 INSTALLED_APPS = [
     "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "app",
-    "corsheaders",
-    "article",
-    "qna",
-    "post",
-    "userProfile",
-    "utils",
-    "customAuth",
+    ...
     "ai",
+    "django_elasticsearch_dsl",
 ]
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
