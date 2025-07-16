@@ -32,15 +32,16 @@ ELASTICSEARCH_PASSWORD = 'YourStrongPassword123'
 
 ELASTIC_SEARCH_HOST = {
     "default": {
-        "hosts": "https://34.10.231.119:9200",
-        "http_auth": (ES_USERNAME, ES_PASSWORD),
+        'HOST': 'http://34.100.190.94:9200',
+        "http_auth": (ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD),
         "verify_certs": False,
     }
 }
+
 ELASTICSEARCH_DSL = {
     "default": {
-        "hosts": "https://34.10.231.119:9200",
-        "http_auth": (ES_USERNAME, ES_PASSWORD),
+        'HOST': 'http://34.100.190.94:9200',
+        "http_auth": (ELASTICSEARCH_USERNAME, ELASTICSEARCH_PASSWORD),
         "verify_certs": False,
     }
 }
