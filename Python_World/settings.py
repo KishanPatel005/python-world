@@ -27,8 +27,8 @@ MONGO_URI = (
 connect(host=MONGO_URI)
 
 
-ES_USERNAME="elastic"
-ES_PASSWORD="T-*AQfgycVhp5O84cAO0"
+ELASTICSEARCH_USERNAME = 'elastic'
+ELASTICSEARCH_PASSWORD = 'YourStrongPassword123'
 
 ELASTIC_SEARCH_HOST = {
     "default": {
